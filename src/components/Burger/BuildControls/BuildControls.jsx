@@ -13,11 +13,13 @@ const BuildControls = ({
   ingredientAdded,
   ingredientRemoved,
   disabled,
-  price
+  price,
+  purchasable,
+  ordered
 }) => {
   return (
     <div className={styles.buildControls}>
-      <p>Current Price is: {price}</p>
+      <p>Current Price is: {price.toFixed(2)}</p>
       {controls.map(ctrl => (
         <BuildControl
           key={ctrl.label}
@@ -27,6 +29,13 @@ const BuildControls = ({
           disabled={disabled[ctrl.type]}
         />
       ))}
+      <button
+        className={styles.orderButton}
+        disabled={!purchasable}
+        onClick={ordered}
+      >
+        Order Now
+      </button>
     </div>
   );
 };
