@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Button.css';
 
-const Button = props => (
+const Button = (props) => (
   <button
+    disabled={props.disabled}
     className={[styles.button, styles[props.btnType]].join(' ')}
     onClick={props.clicked}
   >
