@@ -24,5 +24,5 @@ export default memo(
   Modal,
   (prevProps, nextProps) =>
     nextProps.show === prevProps.show ||
-    nextProps.children == prevProps.children
+    nextProps.children === prevProps.children
 );
